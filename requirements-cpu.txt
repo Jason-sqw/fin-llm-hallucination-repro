@@ -1,0 +1,12 @@
+# CPU 路线依赖（Windows 也可用，不含 bitsandbytes）
+# torch 请先单独安装 CPU 版：
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+transformers>=4.40
+datasets>=2.18
+peft>=0.10
+accelerate>=0.28
+pyyaml>=6.0
+sentencepiece
+protobuf
+# 从 ModelScope 下载模型（国内直连）
+modelscope

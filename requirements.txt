@@ -1,0 +1,11 @@
+# 训练/推理依赖，建议在 Linux/WSL 的 GPU 环境安装
+torch>=2.1
+transformers>=4.40
+datasets>=2.18
+peft>=0.10
+bitsandbytes>=0.43
+accelerate>=0.28
+pyyaml>=6.0
+# 部分中文基座需要
+sentencepiece
+protobuf

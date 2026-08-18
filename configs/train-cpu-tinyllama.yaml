@@ -1,0 +1,34 @@
+# CPU 可跑的 TinyLlama LoRA 配置（不需要 GPU / 4-bit）
+base_model: models/tinyllama-1.1b-chat
+train_file: data/processed/train.json
+val_file: data/processed/val.json
+output_dir: outputs/tinyllama-lora
+
+num_train_epochs: 3
+learning_rate: 0.0002
+lr_scheduler_type: cosine
+warmup_ratio: 0.03
+per_device_train_batch_size: 1
+per_device_eval_batch_size: 1
+gradient_accumulation_steps: 8
+max_seq_len: 1024
+logging_steps: 10
+eval_steps: 50
+save_steps: 100
+save_total_limit: 2
+gradient_checkpointing: false
+
+load_in_4bit: false
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+target_modules:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
+  - gate_proj
+  - up_proj
+  - down_proj
+
+seed: 42
